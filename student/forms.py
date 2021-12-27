@@ -24,3 +24,6 @@ class StudentForm(forms.ModelForm):
             'name', 'sex', 'profession', 'email', 'qq', 'phone'
         )
 
+
+class OrmModelForm(forms.Form):
+    query_data = forms.CharField(label="ORM查询语句", widget=forms.Textarea )

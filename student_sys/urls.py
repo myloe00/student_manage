@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from student.views import index, IndexView
+from student.views import index, IndexView, OrmModelView
 
 urlpatterns = [
+    path('', index),
     path('admin/', admin.site.urls),
     path('index/', index),
     path('index_fbv/', index),
     path('index_cbv/', IndexView.as_view()),
-    path('student/', include('student.urls'))
+    path('student/', include('student.urls')),
+    path('orm_model/', OrmModelView.as_view()),
 ]
